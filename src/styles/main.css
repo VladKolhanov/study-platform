@@ -1,26 +1,77 @@
+@import './_colors.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-	--background: #ffffff;
-	--foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--background: #0a0a0a;
-		--foreground: #ededed;
-	}
-}
-
-body {
-	color: var(--foreground);
-	background: var(--background);
-}
-
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
+	}
+}
+
+@layer base {
+	:root {
+		--background: var(--white);
+		--foreground: var(--blue-800);
+		--card: var(--white);
+		--card-foreground: var(--blue-800);
+		--popover: var(--white);
+		--popover-foreground: var(--blue-800);
+		--primary: var(--purple-100);
+		--primary-foreground: var(--blue-200);
+		--secondary: var(--blue-100);
+		--secondary-foreground: var(--blue-700);
+		--muted: var(--blue-100);
+		--muted-foreground: var(--blue-500);
+		--accent: var(--blue-100);
+		--accent-foreground: var(--blue-700);
+		--destructive: var(--red-100);
+		--destructive-foreground: var(--blue-200);
+		--border: var(--blue-300);
+		--input: var(--blue-300);
+		--ring: var(--purple-100);
+		--chart-1: var(--red-200);
+		--chart-2: var(--green-100);
+		--chart-3: var(--blue-600);
+		--chart-4: var(--yellow-100);
+		--chart-5: var(--orange-100);
+		--radius: 0.75rem;
+	}
+
+	[data-theme='dark'] {
+		--background: var(--blue-800);
+		--foreground: var(--blue-200);
+		--card: var(--blue-800);
+		--card-foreground: var(--blue-200);
+		--popover: var(--blue-800);
+		--popover-foreground: var(--blue-200);
+		--primary: var(--purple-300);
+		--primary-foreground: var(--blue-200);
+		--secondary: var(--blue-650);
+		--secondary-foreground: var(--blue-200);
+		--muted: var(--blue-650);
+		--muted-foreground: var(--blue-400);
+		--accent: var(--blue-650);
+		--accent-foreground: var(--blue-200);
+		--destructive: var(--red-300);
+		--destructive-foreground: var(--blue-200);
+		--border: var(--blue-650);
+		--input: var(--blue-650);
+		--ring: var(--purple-300);
+		--chart-1: var(--blue-900);
+		--chart-2: var(--green-200);
+		--chart-3: var(--orange-200);
+		--chart-4: var(--purple-200);
+		--chart-5: var(--dark-pink-100);
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground transition duration-300;
 	}
 }
