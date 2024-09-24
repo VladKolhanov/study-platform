@@ -18,6 +18,7 @@
 						"^@/public",
 						"^@/app",
 						"^@/configs",
+						"^@/providers",
 						"^@/services/libs",
 						"^@/services/api",
 						"^@/actions",
