@@ -1,3 +1,47 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+	"extends": ["next/core-web-vitals", "next/typescript", "prettier"],
+	"plugins": ["simple-import-sort", "import"],
+	"rules": {
+		/* main */
+		"no-console": ["warn", { "allow": ["warn", "error"] }],
+		"prefer-arrow-callback": "error",
+		"prefer-template": "error",
+		/* imports */
+		"simple-import-sort/exports": "warn",
+		"simple-import-sort/imports": [
+			"warn",
+			{
+				"groups": [
+					["server-only", "client-only", "use client", "use server"],
+					["^@?[a-zA-Z]"],
+					[
+						"^@/public",
+						"^@/app",
+						"^@/configs",
+						"^@/services/libs",
+						"^@/services/api",
+						"^@/actions",
+						"^@/store",
+						"^@/shared/fonts",
+						"^@/shared/icons",
+						"^@/shared/utils",
+						"^@/shared/components/atoms",
+						"^@/shared/components/molecules",
+						"^@/shared/components/organisms",
+						"^@/shared/components/templates",
+						"^@/types",
+						".css$"
+					],
+					["^/", "^./", "^../", "^../../"]
+				]
+			}
+		],
+		"import/first": "error",
+		"import/newline-after-import": "error",
+		"import/no-duplicates": "error"
+	},
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": "latest"
+	}
 }
