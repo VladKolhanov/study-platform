@@ -8,6 +8,7 @@
 		"start": "next start",
 		"lint": "next lint --fix",
 		"prettier": "prettier --write .",
+		"type:check": "tsc --pretty --noEmit",
 		"prepare": "husky"
 	},
 	"dependencies": {
@@ -19,6 +20,7 @@
 		"@commitlint/cli": "^19.5.0",
 		"@commitlint/config-conventional": "^19.5.0",
 		"@commitlint/types": "^19.5.0",
+		"@total-typescript/ts-reset": "^0.6.1",
 		"@types/node": "^20",
 		"@types/react": "^18",
 		"@types/react-dom": "^18",

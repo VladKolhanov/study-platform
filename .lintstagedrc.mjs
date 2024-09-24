@@ -10,7 +10,13 @@ const buildPrettierCommand = (filenames) =>
 		.map((f) => path.relative(process.cwd(), f))
 		.join(' ')}`;
 
+const buildTscCommand = () => `tsc --pretty --noEmit`;
+
 export default {
-	'*.{js,mjs,jsx,ts,tsx}': [buildPrettierCommand, buildEslintCommand],
+	'*.{js,mjs,jsx,ts,tsx}': [
+		buildPrettierCommand,
+		buildEslintCommand,
+		buildTscCommand,
+	],
 	'*.{json,md,mdx,html}': [buildPrettierCommand],
 };
